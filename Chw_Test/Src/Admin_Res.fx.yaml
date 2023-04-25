@@ -1,0 +1,300 @@
+"Admin_Res As screen.'tabletLayout_Meeting_ver3.0'":
+
+    RectQuickActionBar1_8 As rectangle:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =40
+        Width: =1161
+        X: =204
+        ZIndex: =1
+
+    LblAppName1_8 As label:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(56, 96, 178, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        Size: =13
+        Text: ="관리자 회의실 예약 조회"
+        Width: =358
+        Wrap: =false
+        X: =208
+        Y: =3
+        ZIndex: =2
+
+    Icon4_8 As icon.ArrowLeft:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        BorderThickness: =1
+        Color: =RGBA(56, 96, 178, 1)
+        DisabledColor: =RGBA(56, 96, 178, 1)
+        Height: =40
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back()
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =8
+        PaddingTop: =10
+        Width: =56
+        X: =148
+        ZIndex: =37
+
+    Rectangle4_8 As rectangle:
+        Fill: =RGBA(237, 238, 243, 1)
+        Height: =768
+        ZIndex: =38
+
+    Label3_8 As label:
+        FontWeight: =FontWeight.Bold
+        Size: =14
+        Text: ="회의실"
+        Width: =116
+        X: =17
+        ZIndex: =39
+
+    Container4_8 As groupContainer.manualLayoutContainer:
+        Height: =725
+        Width: =150
+        Y: =43
+        ZIndex: =40
+
+        Component1_33 As Component1:
+            appName: ="회의실 예약"
+            OnSelect: =Room_Select
+
+        Component1_34 As Component1:
+            appName: ="Admin 수정"
+            OnSelect: =Admin_Room
+            Y: =160
+            ZIndex: =2
+
+        Component1_35 As Component1:
+            appName: ="Admin 조회"
+            OnSelect: =Admin_Res
+            Y: =120
+            ZIndex: =3
+
+        Component1_36 As Component1:
+            appName: ="담당 회의 조회"
+            OnSelect: =Res_Check_Manager
+            Y: =40
+            ZIndex: =4
+
+        Component1_64 As Component1:
+            appName: ="참가 회의 조회"
+            OnSelect: =Res_Check_Attendant
+            Y: =80
+            ZIndex: =5
+
+    Image2_8 As image:
+        Height: =24
+        Image: ='MicrosoftTeams-image'
+        OnSelect: =Navigate(Main)
+        Width: =227
+        X: =1138
+        Y: =8
+        ZIndex: =41
+
+    DataTable1_1 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =574
+        Items: |+
+            =If(Toggle1.Value=true,MeetingReservations, Filter(MeetingReservations, start>= DatePicker2.SelectedDate && start<= DateAdd(DatePicker2.SelectedDate,1,TimeUnit.Days)))
+            
+        Width: =1150
+        X: =216
+        Y: =150
+        ZIndex: =42
+
+        회의명_열1 As dataTableColumn.textualColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="회의명"
+            FieldName: ="cr778_6bfa2dd089234a43a31fbc268e20f0b7"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.회의명
+            Width: =200
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        manager_열1 As dataTableColumn.textualColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="담당자"
+            FieldName: ="cr778_manager"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =9
+            Text: =ThisItem.manager
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        end_열1 As dataTableColumn.dateTimeColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="종료 시간"
+            FieldName: ="cr778_end"
+            FieldVariantName: ="dateTimeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =8
+            Text: =Text(ThisItem.end,DateTimeFormat.ShortDateTime)
+            Width: =230
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+        start_열1 As dataTableColumn.dateTimeColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="시작 시간"
+            FieldName: ="cr778_start"
+            FieldVariantName: ="dateTimeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =7
+            Text: =Text(ThisItem.start,DateTimeFormat.ShortDateTime)
+            Width: =228
+            X: =772
+            Y: =0
+            ZIndex: =11
+
+        MeetingRoom_열1 As dataTableColumn.textualColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="회의실명"
+            FieldName: ="cr778_meetingroom"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.MeetingRoom
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =13
+
+        cr778_attendant_열1 As dataTableColumn.textualColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="참가자"
+            FieldName: ="cr778_attendant"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =10
+            Text: =ThisItem.cr778_attendant
+            Width: =300
+            X: =0
+            Y: =0
+            ZIndex: =14
+
+        cr778_building_열1 As dataTableColumn.textualColumn:
+            AutoWidth: =false
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="건물명"
+            FieldName: ="cr778_building"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.cr778_building
+            Width: =80
+            X: =0
+            Y: =0
+            ZIndex: =15
+
+    DatePicker2 As datepicker:
+        DisplayMode: =If(Toggle1.Value=true, DisplayMode.Disabled, DisplayMode.Edit)
+        X: =216
+        Y: =81
+        ZIndex: =43
+
+    Toggle1 As toggleSwitch:
+        FalseText: ="전체 보기"
+        Height: =34
+        TrueText: ="전체 보기"
+        Width: =161
+        X: =564
+        Y: =87
+        ZIndex: =44
+
+    Button8_1 As button:
+        OnSelect: =Set(AdminRSVPopupVisible,true)
+        Text: ="일정 취소"
+        X: =1180
+        Y: =86
+        ZIndex: =45
+
+    Icon6_2 As icon.CalendarBlank:
+        Height: =50
+        Icon: =Icon.CalendarBlank
+        OnSelect: =Navigate(Calendar)
+        Visible: =false
+        Width: =50
+        X: =198
+        Y: =76
+        ZIndex: =51
+
+    Group2_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =51
+
+        lbl_Event_Clickshield_2 As label:
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =App.Height
+            Text: =""
+            Visible: =AdminRSVPopupVisible
+            Width: =App.Width
+            ZIndex: =46
+
+        lbl_Event_Base_2 As label:
+            Fill: =Color.White
+            Height: =560
+            Text: =""
+            Visible: =AdminRSVPopupVisible
+            Width: =798
+            X: =300
+            Y: =93
+            ZIndex: =47
+
+        Label11_1 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =255
+            Size: =27
+            Text: ="예약을 삭제하시겠습니까?"
+            Visible: =AdminRSVPopupVisible
+            Width: =512
+            X: =443
+            Y: =245
+            ZIndex: =48
+
+        Button11_1 As button:
+            OnSelect: =Set(AdminRSVPopupVisible,false)
+            Text: ="아니오"
+            Visible: =AdminRSVPopupVisible
+            X: =908
+            Y: =578
+            ZIndex: =49
+
+        Button12_1 As button:
+            OnSelect: =Set(AdminRSVPopupVisible,false);Remove(MeetingReservations,DataTable1_1.Selected)
+            Text: ="예"
+            Visible: =AdminRSVPopupVisible
+            X: =704
+            Y: =578
+            ZIndex: =50
+

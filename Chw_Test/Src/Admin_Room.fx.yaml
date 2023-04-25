@@ -1,0 +1,241 @@
+"Admin_Room As screen.'tabletLayout_Meeting_ver3.0'":
+
+    RectQuickActionBar1_9 As rectangle:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =40
+        Width: =1161
+        X: =204
+        ZIndex: =1
+
+    LblAppName1_9 As label:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(56, 96, 178, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        Size: =13
+        Text: ="관리자 회의실 관리"
+        Width: =358
+        Wrap: =false
+        X: =208
+        Y: =3
+        ZIndex: =2
+
+    Icon4_9 As icon.ArrowLeft:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        BorderThickness: =1
+        Color: =RGBA(56, 96, 178, 1)
+        DisabledColor: =RGBA(56, 96, 178, 1)
+        Height: =40
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back()
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =8
+        PaddingTop: =10
+        Width: =56
+        X: =148
+        ZIndex: =37
+
+    Rectangle4_9 As rectangle:
+        Fill: =RGBA(237, 238, 243, 1)
+        Height: =768
+        ZIndex: =38
+
+    Label3_9 As label:
+        FontWeight: =FontWeight.Bold
+        Size: =14
+        Text: ="회의실"
+        Width: =116
+        X: =17
+        ZIndex: =39
+
+    Container4_9 As groupContainer.manualLayoutContainer:
+        Height: =725
+        Width: =150
+        Y: =43
+        ZIndex: =40
+
+        Component1_37 As Component1:
+            appName: ="회의실 예약"
+            OnSelect: =Room_Select
+
+        Component1_38 As Component1:
+            appName: ="Admin 수정"
+            OnSelect: =Admin_Room
+            Y: =160
+            ZIndex: =2
+
+        Component1_39 As Component1:
+            appName: ="Admin 조회"
+            OnSelect: =Admin_Res
+            Y: =120
+            ZIndex: =3
+
+        Component1_40 As Component1:
+            appName: ="담당 회의 조회"
+            OnSelect: =Res_Check_Manager
+            Y: =40
+            ZIndex: =4
+
+        Component1_65 As Component1:
+            appName: ="참가 회의 조회"
+            OnSelect: =Res_Check_Attendant
+            Y: =80
+            ZIndex: =5
+
+    Image2_9 As image:
+        Height: =24
+        Image: ='MicrosoftTeams-image'
+        OnSelect: =Navigate(Main)
+        Width: =227
+        X: =1138
+        Y: =8
+        ZIndex: =41
+
+    Button7 As button:
+        OnSelect: =Navigate(Admin_Addroom);
+        Text: ="회의실 추가"
+        X: =1119
+        Y: =72
+        ZIndex: =45
+
+    "Gallery1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Height: =600
+        Items: =MeetingRooms_1
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Width: =1000
+        X: =250
+        Y: =150
+        ZIndex: =46
+
+        Image1 As image:
+            Height: =128
+            Image: =ThisItem.Picture
+            OnSelect: =Select(Parent)
+            Width: =300
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =30
+            Text: =ThisItem.RoomName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Parent.TemplateWidth - Image1.Width - 104
+            X: =Image1.X + Image1.Width + 24
+            Y: =44
+            ZIndex: =2
+
+        Subtitle1 As label:
+            Height: =Self.Size * 1.8
+            OnSelect: =Select(Parent)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =20
+            Text: =ThisItem.Building
+            VerticalAlign: =VerticalAlign.Top
+            Width: =Title1.Width
+            X: =Title1.X
+            Y: =Title1.Y + Title1.Height + 4
+            ZIndex: =3
+
+        NextArrow2 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =80
+            Icon: =Icon.Edit
+            OnSelect: |-
+                =Select(Parent);Navigate(Admin_Editroom);UpdateContext({ResetImage:true});UpdateContext({ResetImage:false})
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="항목 세부 정보 보기"
+            Visible: =false
+            Width: =80
+            X: =760
+            Y: =40
+            ZIndex: =4
+
+        Separator1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Icon4 As icon.Trash:
+            Height: =80
+            Icon: =Icon.Trash
+            OnSelect: =Select(Parent);Set(AdminRoomPopupVisible,true)
+            Width: =80
+            X: =874
+            Y: =40
+            ZIndex: =6
+
+    Group2 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =52
+
+        lbl_Event_Clickshield_1 As label:
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =App.Height
+            Text: =""
+            Visible: =AdminRoomPopupVisible
+            Width: =App.Width
+            ZIndex: =47
+
+        lbl_Event_Base_1 As label:
+            Fill: =Color.White
+            Height: =560
+            Text: =""
+            Visible: =AdminRoomPopupVisible
+            Width: =798
+            X: =300
+            Y: =93
+            ZIndex: =48
+
+        Label11 As label:
+            Align: =Align.Center
+            FontWeight: =FontWeight.Semibold
+            Height: =255
+            Size: =27
+            Text: ="회의실을 삭제하시겠습니까?"
+            Visible: =AdminRoomPopupVisible
+            Width: =512
+            X: =443
+            Y: =245
+            ZIndex: =49
+
+        Button11 As button:
+            OnSelect: =Set(AdminRoomPopupVisible,false)
+            Text: ="아니오"
+            Visible: =AdminRoomPopupVisible
+            X: =908
+            Y: =578
+            ZIndex: =50
+
+        Button12 As button:
+            OnSelect: =Set(AdminRoomPopupVisible,false);Remove(MeetingRooms_1,Gallery1.Selected)
+            Text: ="예"
+            Visible: =AdminRoomPopupVisible
+            X: =704
+            Y: =578
+            ZIndex: =51
+

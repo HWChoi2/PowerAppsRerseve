@@ -1,0 +1,51 @@
+Component1 As CanvasComponent:
+    appName: ="텍스트"
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =40
+    OnSelect: =App.ActiveScreen
+    Visible: =true
+    Width: =150
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Button4 As button:
+        Fill: =RGBA(0, 0, 0, 0)
+        OnSelect: =Navigate(Component1.OnSelect)
+        RadiusBottomLeft: =0
+        RadiusBottomRight: =0
+        RadiusTopLeft: =0
+        RadiusTopRight: =0
+        Text: =""
+        Width: =150
+        ZIndex: =1
+
+    app_lbl As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        HoverColor: =Color.White
+        HoverFill: =ColorFade(RGBA(56, 96, 178, 1), -20%)
+        OnSelect: =Navigate(Component1.OnSelect)
+        PaddingLeft: =30
+        Size: =10
+        Text: =Component1.appName
+        ZIndex: =2
+
+    Icon5 As icon.Edit:
+        Height: =24
+        HoverColor: =RGBA(0, 18, 107, 1)
+        Icon: |-
+            =Switch(
+                Component1.appName,
+                "회의실 예약",Icon.Pin,
+                "담당 회의 조회",Icon.Search,
+                "참가 회의 조회",Icon.Search,
+                "Admin 조회",Icon.ListWatchlistRemind,
+                "Admin 수정",Icon.Edit
+            )
+        OnSelect: =Navigate(Component1.OnSelect)
+        Width: =24
+        X: =8
+        Y: =8
+        ZIndex: =3
+

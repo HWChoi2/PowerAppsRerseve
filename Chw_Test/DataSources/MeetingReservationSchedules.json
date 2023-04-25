@@ -1,0 +1,96 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr778_meetingreservationschedules",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr778_meetingreservationschedule",
+    "MaxGetRowsCount": 500,
+    "Name": "MeetingReservationSchedules",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr778_bf3cb3b2a5ad4a7cb9ca0fc31a7b62c2": "Time",
+      "cr778_meetingreservationschedule_AsyncOperations": "System Jobs",
+      "cr778_meetingreservationschedule_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr778_meetingreservationschedule_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr778_meetingreservationschedule_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr778_meetingreservationschedule_ProcessSession": "Process Sessions",
+      "cr778_meetingreservationschedule_SyncErrors": "Sync Errors",
+      "cr778_meetingreservationscheduleid": "MeetingReservationSchedule",
+      "cr778_reserved": "Reserved",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "MeetingReservationSchedules",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "MeetingReservationSchedules (뷰)",
+    "Name": "_cr778_meetingreservationschedule_views",
+    "RelatedEntityName": "MeetingReservationSchedules",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "053b0d58-9515-4b17-9385-f5c53f1990b9": "Active MeetingReservationSchedules",
+      "2a2e5689-c1c8-4b1a-b587-99f769ef457d": "Inactive MeetingReservationSchedules",
+      "5aa3f0b8-9bbe-42a9-b270-c5bb518faee5": "MeetingReservationSchedule Associated View",
+      "a2bfa083-e196-46b9-bf8a-a3e17b70493c": "MeetingReservationSchedule Advanced Find View",
+      "fa664cb3-a6b4-4607-98d7-b56fe1560e4d": "MeetingReservationSchedule Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (MeetingReservationSchedules)",
+    "Name": "cr778_meetingreservationschedule_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "MeetingReservationSchedules"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "MeetingReservationSchedules",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (MeetingReservationSchedules)",
+    "Name": "cr778_meetingreservationschedule_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "MeetingReservationSchedules"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "MeetingReservationSchedules",
+    "Type": "OptionSetInfo"
+  }
+]
