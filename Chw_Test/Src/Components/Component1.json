@@ -121,7 +121,7 @@
         "Name": "Button4",
         "Parent": "Component1",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 459,
+        "PublishOrderIndex": 2,
         "Rules": [
           {
             "Category": "Data",
@@ -491,7 +491,7 @@
         "Name": "app_lbl",
         "Parent": "Component1",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 460,
+        "PublishOrderIndex": 3,
         "Rules": [
           {
             "Category": "Data",
@@ -841,7 +841,7 @@
         "Name": "Icon5",
         "Parent": "Component1",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 461,
+        "PublishOrderIndex": 4,
         "Rules": [
           {
             "Category": "Design",
@@ -1037,7 +1037,7 @@
       },
       "OnSelect"
     ],
-    "LastModifiedTimestamp": "638179921207787067",
+    "LastModifiedTimestamp": "638180026798624377",
     "Name": "Component1",
     "Rules": [
       {
@@ -1133,7 +1133,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638179921207787067",
+  "LastModifiedTimestamp": "638180026798624377",
   "Name": "05b466cb6b394b87aaaf421e16da7e2e",
   "OverridableProperties": {},
   "Version": "638119537956076748"

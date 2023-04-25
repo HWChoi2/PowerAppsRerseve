@@ -8,17 +8,17 @@
       }
     },
     {
-      "Kind": "default.cds_cr778_meetingroom_forms",
-      "Namespace": "MeetingRooms_1 (양식)",
-      "Values": {
-        "Information": "0cc466d6-b0a6-4312-82c1-d09eea1b0bde"
-      }
-    },
-    {
       "Kind": "default.cds_cr778_meetingreservationschedule_forms",
       "Namespace": "MeetingReservationSchedules (양식)",
       "Values": {
         "Information": "e9dcc29b-12ae-4f54-a456-bfc3ab35df90"
+      }
+    },
+    {
+      "Kind": "default.cds_cr778_meetingroom_forms",
+      "Namespace": "MeetingRooms_1 (양식)",
+      "Values": {
+        "Information": "0cc466d6-b0a6-4312-82c1-d09eea1b0bde"
       }
     },
     {
