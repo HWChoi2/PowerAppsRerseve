@@ -1037,7 +1037,7 @@
       },
       "OnSelect"
     ],
-    "LastModifiedTimestamp": "638179921207787067",
+    "LastModifiedTimestamp": "638180025136980421",
     "Name": "Component1",
     "Rules": [
       {
@@ -1133,7 +1133,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638179921207787067",
+  "LastModifiedTimestamp": "638180025136980421",
   "Name": "05b466cb6b394b87aaaf421e16da7e2e",
   "OverridableProperties": {},
   "Version": "638119537956076748"
