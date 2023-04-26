@@ -1,0 +1,105 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr778_meetingreservations",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr778_meetingreservation",
+    "MaxGetRowsCount": 500,
+    "Name": "MeetingReservations",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr778_6bfa2dd089234a43a31fbc268e20f0b7": "회의명",
+      "cr778_attendant": "Attendant",
+      "cr778_building": "Building",
+      "cr778_dmemails": "DMemails",
+      "cr778_email": "email",
+      "cr778_end": "end",
+      "cr778_full": "Full",
+      "cr778_manager": "manager",
+      "cr778_meetingreservation_AsyncOperations": "System Jobs",
+      "cr778_meetingreservation_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr778_meetingreservation_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr778_meetingreservation_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr778_meetingreservation_ProcessSession": "Process Sessions",
+      "cr778_meetingreservation_SyncErrors": "Sync Errors",
+      "cr778_meetingreservationid": "MeetingReservation",
+      "cr778_meetingroom": "MeetingRoom",
+      "cr778_remark": "remark",
+      "cr778_start": "start",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "MeetingReservations",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "MeetingReservations (뷰)",
+    "Name": "_cr778_meetingreservation_views",
+    "RelatedEntityName": "MeetingReservations",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "2ca68788-d5cc-4adf-ab5b-93c5597f52f4": "MeetingReservation Lookup View",
+      "6208ee64-95c7-4f46-bc66-c042e6e56529": "Inactive MeetingReservations",
+      "6c14d8d9-0ada-4473-aef5-f13189e7de08": "MeetingReservation Associated View",
+      "88671c86-6646-42d1-9e4d-dea705e654bd": "MeetingReservation Advanced Find View",
+      "a4b2e02b-aebe-4d98-bc86-bfd82370b24f": "Active MeetingReservations"
+    }
+  },
+  {
+    "DisplayName": "Status (MeetingReservations)",
+    "Name": "cr778_meetingreservation_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "MeetingReservations"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "MeetingReservations",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (MeetingReservations)",
+    "Name": "cr778_meetingreservation_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "MeetingReservations"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "MeetingReservations",
+    "Type": "OptionSetInfo"
+  }
+]

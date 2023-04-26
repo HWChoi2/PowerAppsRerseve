@@ -1,0 +1,50 @@
+{
+  "QualifiedValues": [
+    {
+      "Kind": "default.cds_cr778_meetingreservation_forms",
+      "Namespace": "MeetingReservations (양식)",
+      "Values": {
+        "Information": "ec7c770a-800c-461a-9417-df77111d363d"
+      }
+    },
+    {
+      "Kind": "default.cds_cr778_meetingreservationschedule_forms",
+      "Namespace": "MeetingReservationSchedules (양식)",
+      "Values": {
+        "Information": "e9dcc29b-12ae-4f54-a456-bfc3ab35df90"
+      }
+    },
+    {
+      "Kind": "default.cds_cr778_meetingroom_forms",
+      "Namespace": "MeetingRooms_1 (양식)",
+      "Values": {
+        "Information": "0cc466d6-b0a6-4312-82c1-d09eea1b0bde"
+      }
+    },
+    {
+      "Kind": "default.cds_systemuser_forms",
+      "Namespace": "Users (양식)",
+      "Values": {
+        "Application User": "d26924ef-4d80-46f7-ab1d-e6ae80a54ce8",
+        "Information": "094fb08a-77bb-49e0-b7ea-8dbddfd01294",
+        "User": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
+        "User form – Business": "c2413504-7eb2-4c59-a087-95d819866114",
+        "User Hierarchy Tile Form": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452"
+      }
+    },
+    {
+      "Kind": "default.cds_cr778_meetingrooms_forms",
+      "Namespace": "MeetingRooms (양식)",
+      "Values": {
+        "Information": "d85db6cb-7990-46c2-8140-c5e1325770e6"
+      }
+    },
+    {
+      "Kind": "default.cds_cr778_meetingempty_forms",
+      "Namespace": "MeetingEmpties (양식)",
+      "Values": {
+        "Information": "633526a5-6a79-4ee3-824c-e5b9ff8d8f80"
+      }
+    }
+  ]
+}

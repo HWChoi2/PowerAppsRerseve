@@ -1,0 +1,53 @@
+{
+  "21a26c57-dbf4-4a4f-88d5-4ae04e053199": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 Outlook",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1626/1.0.1626.3238/office365/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365Outlook"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "21a26c57-dbf4-4a4f-88d5-4ae04e053199"
+  },
+  "6ebd71bb-97f4-499b-8ccb-c45a28e95bb0": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Office 365 사용자",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1626/1.0.1626.3238/office365users/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_office365users",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "Office365사용자"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "6ebd71bb-97f4-499b-8ccb-c45a28e95bb0"
+  },
+  "769a4c4d-14d6-45b6-97c5-c72c0c9101bc": {
+    "connectionRef": {
+      "apiTier": "Standard",
+      "displayName": "Microsoft Teams",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1631/1.0.1631.3268/teams/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_teams",
+      "parameterHints": {},
+      "parameterHintsV2": {}
+    },
+    "datasets": {},
+    "dataSources": [
+      "MicrosoftTeams"
+    ],
+    "dependencies": {},
+    "dependents": [],
+    "id": "769a4c4d-14d6-45b6-97c5-c72c0c9101bc"
+  }
+}

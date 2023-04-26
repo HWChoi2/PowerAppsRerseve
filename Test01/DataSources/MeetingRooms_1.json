@@ -1,0 +1,101 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "cr778_meetingrooms",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "cr778_meetingroom",
+    "MaxGetRowsCount": 500,
+    "Name": "MeetingRooms_1",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "cr778_13431ce974304c768307d189906db629": "Full",
+      "cr778_building": "Building",
+      "cr778_meetingroom_AsyncOperations": "System Jobs",
+      "cr778_meetingroom_BulkDeleteFailures": "Bulk Delete Failures",
+      "cr778_meetingroom_DuplicateBaseRecord": "Duplicate Records (cr778_meetingroom_DuplicateBaseRecord)",
+      "cr778_meetingroom_DuplicateMatchingRecord": "Duplicate Records (cr778_meetingroom_DuplicateMatchingRecord)",
+      "cr778_meetingroom_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "cr778_meetingroom_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "cr778_meetingroom_ProcessSession": "Process Sessions",
+      "cr778_meetingroom_SyncErrors": "Sync Errors",
+      "cr778_meetingroomid": "MeetingRoom",
+      "cr778_picture": "Picture",
+      "cr778_pictureid": "cr778_PictureId",
+      "cr778_roomname": "RoomName",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "MeetingRooms_1",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "MeetingRooms_1 (뷰)",
+    "Name": "_cr778_meetingroom_views",
+    "RelatedEntityName": "MeetingRooms_1",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "1be5d60d-7a6b-4842-a1a7-0e06556c826b": "Active MeetingRooms",
+      "45f987a4-4dce-40d1-bed6-5068023e4f54": "MeetingRoom Associated View",
+      "93711501-7858-49f8-a68d-48a647c88fb1": "Inactive MeetingRooms",
+      "e0394769-bb67-4e9c-a1a9-5c3f545d6e3a": "MeetingRoom Advanced Find View",
+      "e99c3fa3-c895-4821-8acf-70d71b72d7bf": "MeetingRoom Lookup View"
+    }
+  },
+  {
+    "DisplayName": "Status (MeetingRooms_1)",
+    "Name": "cr778_meetingroom_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "MeetingRooms_1"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "MeetingRooms_1",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (MeetingRooms_1)",
+    "Name": "cr778_meetingroom_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "MeetingRooms_1"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "MeetingRooms_1",
+    "Type": "OptionSetInfo"
+  }
+]

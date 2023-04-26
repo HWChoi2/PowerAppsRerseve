@@ -1,0 +1,133 @@
+Main As screen:
+
+    Image5 As image:
+        Height: =738
+        Image: =회의실2
+        Width: =952
+        Y: =15
+        ZIndex: =1
+
+    Button1 As button:
+        Fill: =RGBA(42, 67, 90, 1)
+        Height: =100
+        OnSelect: =Navigate(Room_Select)
+        PaddingLeft: =30
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Text: ="회의 예약"
+        Width: =300
+        X: =1000
+        Y: =134
+        ZIndex: =2
+
+    Button2 As button:
+        Fill: =RGBA(18, 71, 240, 1)
+        Height: =100
+        OnSelect: =Navigate(Res_Check_Manager)
+        PaddingLeft: =30
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Text: ="담당 회의 조회"
+        Width: =300
+        X: =1000
+        Y: =263
+        ZIndex: =3
+
+    Button3 As button:
+        Fill: =RGBA(102, 113, 166, 1)
+        Height: =100
+        OnSelect: =Navigate(Admin_PW조회)
+        PaddingLeft: =30
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Text: ="Admin"
+        Width: =300
+        X: =1000
+        Y: =534
+        ZIndex: =4
+
+    Label1 As label:
+        FontWeight: =FontWeight.Semibold
+        Height: =49
+        Size: =20
+        Text: ="[DEX] 회의실예약"
+        Width: =244
+        X: =59
+        Y: =289
+        ZIndex: =5
+
+    Label2 As label:
+        FontWeight: =FontWeight.Bold
+        Height: =71
+        Size: =35
+        Text: ="DEX 컨설팅"
+        Width: =256
+        X: =59
+        Y: =338
+        ZIndex: =6
+
+    Icon1 As icon.Search:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Search
+        OnSelect: =Navigate(Res_Check_Manager)
+        Width: =50
+        X: =1012
+        Y: =288
+        ZIndex: =7
+
+    Icon2 As icon.Pin:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Pin
+        OnSelect: =Navigate(Room_Select)
+        Width: =50
+        X: =1012
+        Y: =159
+        ZIndex: =8
+
+    Icon3 As icon.Settings:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Settings
+        OnSelect: =Navigate(Admin_PW조회)
+        Width: =50
+        X: =1012
+        Y: =559
+        ZIndex: =9
+
+    Button2_1 As button:
+        Fill: =RGBA(39, 113, 194, 1)
+        Height: =100
+        OnSelect: =Navigate(Res_Check_Attendant)
+        PaddingLeft: =30
+        RadiusBottomLeft: =20
+        RadiusBottomRight: =20
+        RadiusTopLeft: =20
+        RadiusTopRight: =20
+        Size: =20
+        Text: ="참가 회의 조회"
+        Width: =300
+        X: =1000
+        Y: =398
+        ZIndex: =10
+
+    Icon1_1 As icon.Search:
+        Color: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Icon: =Icon.Search
+        OnSelect: =Navigate(Res_Check_Attendant)
+        Width: =50
+        X: =1012
+        Y: =423
+        ZIndex: =11
+

@@ -1,0 +1,539 @@
+"Calendar As screen.'tabletLayout_Meeting_ver3.0'":
+    OnVisible: =Select(Button9_1);Select(Color_Button);Select(Button16_1)
+
+    "gal_Calendar_Days_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+        Height: =600
+        Items: |-
+            =ForAll(
+                Sequence(35),
+                {Value: varFirstDayOfMonth + Value - 1 -  Weekday(
+                    varFirstDayOfMonth,
+                    StartOfWeek.Sunday
+                )+1,
+                NextDay: varFirstDayOfMonth + Value - 1 - Weekday(
+                    varFirstDayOfMonth,
+                    StartOfWeek.Sunday
+                ) + 2}
+            )
+        Layout: =Layout.Vertical
+        OnSelect: =Set(CalendarCheck,true);Select(Button16_1)
+        TemplatePadding: =0
+        TemplateSize: =Self.Height/5
+        Width: =1690
+        WrapCount: =7
+        X: =-90
+        Y: =152
+        ZIndex: =1
+
+        Title19_1 As label:
+            BorderColor: =RGBA(179, 179, 179, 1)
+            BorderThickness: =0.5
+            Color: =RGBA(0, 0, 0, 0)
+            FontWeight: =FontWeight.Normal
+            Height: =Parent.TemplateHeight
+            HoverFill: |-
+                =ColorValue("#C8EEFF")
+            OnSelect: |-
+                =Set(
+                    varFirstDayOfMonth,
+                    Date(
+                        Year(ThisItem.Value),
+                        Month(ThisItem.Value),
+                        1
+                    )
+                );
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            PressedFill: |-
+                =ColorValue("#A8E4FF")
+            Text: =ThisItem.Value
+            VerticalAlign: =VerticalAlign.Top
+            Visible: =false
+            Width: =Parent.TemplateWidth
+            ZIndex: =1
+
+        "Gallery2_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+            Height: =87
+            Items: |-
+                =Filter(
+                    MeetingReservations,
+                    start < ThisItem.NextDay And end >= ThisItem.Value
+                )
+            Layout: =Layout.Vertical
+            OnSelect: =Set(CalendarCheck,true);Select(Button16_1)
+            TemplateFill: |
+                =LookUp(scheduleColor, Full=ThisItem.Full).fill
+            TemplatePadding: =1
+            TemplateSize: |
+                =30
+            Width: =241.42857142857142
+            Y: =33
+            ZIndex: =1
+
+            Title11_1 As label:
+                Align: =Align.Center
+                FontWeight: =FontWeight.Normal
+                Height: =26
+                OnSelect: |
+                    =Set(CalendarCheck,true);Select(Button16_1)
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =14
+                Text: =ThisItem.회의명
+                VerticalAlign: =VerticalAlign.Top
+                Width: =Gallery2_1.Width
+                ZIndex: =1
+
+            Separator11_1 As rectangle:
+                Height: =1
+                OnSelect: =Select(Parent)
+                Width: =Parent.TemplateWidth
+                Y: =Parent.TemplateHeight - 1
+                ZIndex: =3
+
+        Separator18_1 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =3
+
+        btn_Calendar_Day_1 As button:
+            Color: |-
+                =If(
+                    IsToday(ThisItem.Value), Color.White,
+                    Date(Year(ThisItem.Value),   
+                    Month(ThisItem.Value),1)=varFirstDayOfMonth, Color.Black,
+                    Color.LightGray
+                )
+            Fill: |-
+                =If(IsToday(ThisItem.Value), ColorValue("#80BFF9"),Color.Transparent)
+            Height: =33
+            HoverColor: =Self.Color
+            HoverFill: =Self.Fill
+            OnSelect: =Select(Parent);Set(CalendarCheck,true)
+            PressedColor: =Self.Color
+            PressedFill: =Self.Fill
+            RadiusTopRight: =5
+            Text: =Day(ThisItem.Value)
+            Width: =42
+            ZIndex: =4
+
+    "Gallery8_1 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
+        Height: =40
+        Items: =Calendar.WeekdaysShort()
+        OnSelect: =
+        ShowScrollbar: =false
+        TemplatePadding: =0
+        TemplateSize: =244
+        Width: =1690
+        WrapCount: =0
+        X: =-90
+        Y: =112
+        ZIndex: =6
+
+        Title20_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            Fill: =RGBA(56, 96, 178, 1)
+            Height: =36
+            OnSelect: =
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Text: =ThisItem.Value
+            VerticalAlign: =VerticalAlign.Top
+            Width: =244
+            ZIndex: =2
+
+    Button14_1 As button:
+        OnSelect: =Set(CalendarCheck,true)
+        Text: ="단추"
+        Visible: =false
+        X: =842
+        Y: =32
+        ZIndex: =14
+
+    Color_Button As button:
+        OnSelect: |-
+            =ClearCollect(
+                scheduleColor,
+                ForAll(
+                    MeetingReservations,
+                    {
+                        Full: ThisRecord.Full,
+                        fill: RGBA(
+                            RandBetween(
+                                50,
+                                200
+                            ),
+                            RandBetween(
+                                50,
+                                200
+                            ),
+                            RandBetween(
+                                50,
+                                200
+                            ),
+                            1
+                        )
+                    }
+                )
+            )
+        Text: ="버튼"
+        Visible: =false
+        X: =488
+        Y: =3
+        ZIndex: =16
+
+    Group4_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =19
+
+        Button9_1 As button:
+            Color: =RGBA(0, 0, 0, 1)
+            Fill: =RGBA(0, 0, 0, 0)
+            Height: =32
+            OnSelect: |-
+                =Set(varFirstDayOfMonth, 
+                    Date(
+                        Year(Today()),
+                        Month(Today()),
+                        1
+                    )
+                )
+            Size: =20
+            Text: ="Today"
+            X: =1069
+            Y: =61
+            ZIndex: =2
+
+        Label3_13 As label:
+            Height: =69
+            PaddingLeft: =20
+            Size: =24
+            Text: =Text(varFirstDayOfMonth,"[$-en-US]yyyy년 mmmm")
+            Width: =839
+            X: =188
+            Y: =43
+            ZIndex: =11
+
+        Icon7_1 As icon.ChevronRight:
+            Height: =32
+            Icon: =Icon.ChevronRight
+            OnSelect: |-
+                =Set(varFirstDayOfMonth,
+                    Date(
+                        Year(varFirstDayOfMonth),
+                        Month(varFirstDayOfMonth)+1,
+                        1
+                    )
+                )
+            Width: =32
+            X: =1239
+            Y: =61
+            ZIndex: =12
+
+        Icon8_1 As icon.ChevronLeft:
+            Height: =32
+            Icon: =Icon.ChevronLeft
+            OnSelect: |-
+                =Set(varFirstDayOfMonth,
+                    Date(
+                        Year(varFirstDayOfMonth),
+                        Month(varFirstDayOfMonth)-1,
+                        1
+                    )
+                )
+            Width: =32
+            X: =1027
+            Y: =61
+            ZIndex: =13
+
+    Group5_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =19
+
+        RectQuickActionBar1_12 As rectangle:
+            BorderColor: =RGBA(219, 219, 219, 1)
+            BorderThickness: =1
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =40
+            Width: =1161
+            X: =204
+            ZIndex: =3
+
+        LblAppName1_12 As label:
+            BorderColor: =RGBA(219, 219, 219, 1)
+            Color: =RGBA(0, 0, 0, 1)
+            DisabledColor: =RGBA(56, 96, 178, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =35
+            Size: =13
+            Text: ="캘린더"
+            Width: =358
+            Wrap: =false
+            X: =208
+            Y: =3
+            ZIndex: =4
+
+        Icon4_12 As icon.ArrowLeft:
+            BorderColor: =RGBA(219, 219, 219, 1)
+            BorderThickness: =1
+            Color: =RGBA(56, 96, 178, 1)
+            DisabledColor: =RGBA(56, 96, 178, 1)
+            Height: =40
+            Icon: =Icon.ArrowLeft
+            OnSelect: =Back()
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =8
+            PaddingTop: =10
+            Width: =56
+            X: =148
+            ZIndex: =5
+
+        Rectangle4_13 As rectangle:
+            Fill: =RGBA(237, 238, 243, 1)
+            Height: =768
+            ZIndex: =7
+
+        Label3_12 As label:
+            FontWeight: =FontWeight.Bold
+            Size: =14
+            Text: ="회의실"
+            Width: =116
+            X: =17
+            ZIndex: =8
+
+        Container4_12 As groupContainer.manualLayoutContainer:
+            Height: =725
+            Width: =150
+            Y: =43
+            ZIndex: =9
+
+            Component1_30 As Component1:
+                appName: ="회의실 예약"
+                OnSelect: =Room_Select
+
+            Component1_81 As Component1:
+                appName: ="Admin 수정"
+                OnSelect: =Admin_PW수정
+                Y: =160
+                ZIndex: =2
+
+            Component1_80 As Component1:
+                appName: ="Admin 조회"
+                OnSelect: =Admin_PW조회
+                Y: =120
+                ZIndex: =3
+
+            Component1_78 As Component1:
+                appName: ="담당 회의 조회"
+                OnSelect: =Res_Check_Manager
+                Y: =40
+                ZIndex: =4
+
+            Component1_79 As Component1:
+                appName: ="참가 회의 조회"
+                OnSelect: =Res_Check_Attendant
+                Y: =80
+                ZIndex: =5
+
+        Image2_12 As image:
+            Height: =24
+            Image: ='MicrosoftTeams-image'
+            OnSelect: =Navigate(Main)
+            Width: =227
+            X: =1138
+            Y: =8
+            ZIndex: =10
+
+    Button16_1 As button:
+        OnSelect: =Set(GalleryDate,Filter(MeetingReservations,start>=gal_Calendar_Days_1.Selected.Value && start<=DateAdd(gal_Calendar_Days_1.Selected.Value,1,TimeUnit.Days)))
+        Text: ="단추"
+        Visible: =false
+        X: =68
+        Y: =77
+        ZIndex: =22
+
+    Group3_1 As group:
+        Height: =5
+        Width: =5
+        X: =80
+        Y: =80
+        ZIndex: =22
+
+        lbl_Event_Clickshield_5 As label:
+            Fill: =RGBA(0, 0, 0, 0.5)
+            Height: =App.Height
+            Text: =""
+            Visible: =CalendarCheck
+            Width: =App.Width
+            ZIndex: =15
+
+        lbl_Event_Base_5 As label:
+            Fill: =Color.White
+            Height: =666
+            Text: =""
+            Visible: =CalendarCheck
+            Width: =1206
+            X: =76
+            Y: =57
+            ZIndex: =17
+
+        Label9_1 As label:
+            FontWeight: =FontWeight.Semibold
+            Height: =58
+            Size: =20
+            Text: ="일정 조회"
+            Visible: =CalendarCheck
+            Width: =147
+            X: =115
+            Y: =83
+            ZIndex: =18
+
+        "Gallery4_1 As gallery.'BrowseLayout_Vertical_OneTextVariant_ver4.0'":
+            Height: =538
+            Items: =MeetingReservationSchedules
+            Layout: =Layout.Vertical
+            NavigationStep: =0
+            OnSelect: = 
+            ShowScrollbar: =false
+            TemplatePadding: =0
+            TemplateSize: =62
+            Visible: =CalendarCheck
+            Width: =1088
+            WrapCount: =0
+            X: =133
+            Y: =152
+            ZIndex: =19
+
+            Title16_1 As label:
+                Height: =37
+                OnSelect: = 
+                PaddingBottom: =0
+                PaddingLeft: =0
+                PaddingRight: =0
+                PaddingTop: =0
+                Size: =15
+                Text: =ThisItem.Time
+                VerticalAlign: =VerticalAlign.Top
+                Width: =90
+                ZIndex: =1
+
+            Separator16_1 As rectangle:
+                Height: =1
+                OnSelect: = 
+                Width: =1018
+                X: =70
+                Y: =Parent.TemplateHeight - 1
+                ZIndex: =2
+
+            "Gallery6_1 As gallery.'BrowseLayout_Horizontal_TwoTextOneImageVariant_ver4.0'":
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =62
+                Items: =GalleryDate
+                OnSelect: = 
+                ShowScrollbar: =false
+                TemplateFill: =
+                TemplatePadding: =0
+                TemplateSize: =103
+                Visible: =If(!IsBlank(LookUp(GalleryDate,start<=gal_Calendar_Days_1.Selected.Value+TimeValue(ThisItem.Time)&&gal_Calendar_Days_1.Selected.Value+TimeValue(ThisItem.Time)<end)),true)
+                Width: =1016
+                X: =72
+                ZIndex: =3
+
+                Subtitle9_2 As label:
+                    Fill: |
+                        =LookUp(scheduleColor, Full=ThisItem.Full).fill
+                    Height: =62
+                    OnSelect: = 
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =
+                    VerticalAlign: =VerticalAlign.Top
+                    Visible: =If(ThisItem.start<=gal_Calendar_Days_1.Selected.Value+TimeValue(Label12_1.Text)&&DateAdd(ThisItem.end,-30,TimeUnit.Minutes)>=gal_Calendar_Days_1.Selected.Value+TimeValue(Label12_1.Text),true)
+                    Width: =160
+                    ZIndex: =1
+
+                Subtitle9_3 As label:
+                    Height: =36
+                    OnSelect: = 
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Text: =ThisItem.start
+                    VerticalAlign: =VerticalAlign.Top
+                    Visible: =
+                    Width: =296
+                    X: =12
+                    Y: =103
+                    ZIndex: =2
+
+                Title22_1 As label:
+                    Align: =Align.Center
+                    Height: =62
+                    OnSelect: = 
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =12
+                    Text: =ThisItem.회의명
+                    VerticalAlign: =VerticalAlign.Top
+                    Visible: =If(ThisItem.start=gal_Calendar_Days_1.Selected.Value+TimeValue(Label12_1.Text),true)
+                    Width: =160
+                    ZIndex: =3
+
+                Image2_13 As image:
+                    Height: =36
+                    Image: |-
+                        =If(
+                            !IsBlank(ThisItem.email),
+                            Office365사용자.UserPhotoV2(ThisItem.email)
+                        )
+                    OnSelect: =Select(Parent)
+                    RadiusBottomLeft: =100
+                    RadiusBottomRight: =100
+                    RadiusTopLeft: =100
+                    RadiusTopRight: =100
+                    Visible: =If(ThisItem.start=gal_Calendar_Days_1.Selected.Value+TimeValue(Label12_1.Text),true)
+                    Width: =36
+                    X: =65
+                    Y: =26
+                    ZIndex: =4
+
+            Label12_1 As label:
+                Height: =35
+                OnSelect: = 
+                Text: =gal_Calendar_Days_1.Selected.Value+TimeValue(ThisItem.Time)
+                Visible: =false
+                Width: =46
+                Y: =27
+                ZIndex: =4
+
+        Icon9_1 As icon.Cancel:
+            Height: =50
+            Icon: =Icon.Cancel
+            OnSelect: =Set(CalendarCheck,false)
+            Visible: =CalendarCheck
+            Width: =50
+            X: =1203
+            Y: =83
+            ZIndex: =21
+

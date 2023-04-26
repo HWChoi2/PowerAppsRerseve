@@ -1,0 +1,170 @@
+"Room_Select As screen.'tabletLayout_Meeting_ver3.0'":
+
+    RectQuickActionBar1_6 As rectangle:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        BorderThickness: =1
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =40
+        Width: =1161
+        X: =204
+        ZIndex: =1
+
+    LblAppName1_6 As label:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        Color: =RGBA(0, 0, 0, 1)
+        DisabledColor: =RGBA(56, 96, 178, 1)
+        FontWeight: =FontWeight.Semibold
+        Height: =35
+        Size: =13
+        Text: ="회의실 선택"
+        Width: =358
+        Wrap: =false
+        X: =208
+        Y: =3
+        ZIndex: =2
+
+    Icon4_6 As icon.ArrowLeft:
+        BorderColor: =RGBA(219, 219, 219, 1)
+        BorderThickness: =1
+        Color: =RGBA(56, 96, 178, 1)
+        DisabledColor: =RGBA(56, 96, 178, 1)
+        Height: =40
+        Icon: =Icon.ArrowLeft
+        OnSelect: =Back()
+        PaddingBottom: =10
+        PaddingLeft: =10
+        PaddingRight: =8
+        PaddingTop: =10
+        Width: =56
+        X: =148
+        ZIndex: =37
+
+    Rectangle4_6 As rectangle:
+        Fill: =RGBA(237, 238, 243, 1)
+        Height: =768
+        ZIndex: =38
+
+    Label3_6 As label:
+        FontWeight: =FontWeight.Bold
+        Size: =14
+        Text: ="회의실"
+        Width: =116
+        X: =17
+        ZIndex: =39
+
+    Container4_6 As groupContainer.manualLayoutContainer:
+        Height: =725
+        Width: =150
+        Y: =43
+        ZIndex: =40
+
+        Component1_25 As Component1:
+            appName: ="회의실 예약"
+            OnSelect: =Room_Select
+
+        Component1_28 As Component1:
+            appName: ="Admin 수정"
+            OnSelect: =Admin_PW수정
+            Y: =160
+            ZIndex: =2
+
+        Component1_27 As Component1:
+            appName: ="Admin 조회"
+            OnSelect: =Admin_PW조회
+            Y: =120
+            ZIndex: =3
+
+        Component1_26 As Component1:
+            appName: ="담당 회의 조회"
+            OnSelect: =Res_Check_Manager
+            Y: =40
+            ZIndex: =4
+
+        Component1_53 As Component1:
+            appName: ="참가 회의 조회"
+            OnSelect: =Res_Check_Attendant
+            Y: =80
+            ZIndex: =5
+
+    Image2_6 As image:
+        Height: =24
+        Image: ='MicrosoftTeams-image'
+        OnSelect: =Navigate(Main)
+        Width: =227
+        X: =1138
+        Y: =8
+        ZIndex: =41
+
+    "Gallery3 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+        Items: =MeetingRooms_1
+        Layout: =Layout.Vertical
+        TemplatePadding: =0
+        TemplateSize: =Min(160, Self.Height - 60)
+        Width: =1071
+        X: =204
+        Y: =139
+        ZIndex: =44
+
+        Image4 As image:
+            Height: =128
+            Image: =ThisItem.Picture
+            OnSelect: =Select(NextArrow1)
+            Width: =300
+            X: =16
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =1
+
+        Title7 As label:
+            Height: =48
+            OnSelect: =Select(NextArrow1)
+            PaddingBottom: =0
+            PaddingLeft: =0
+            PaddingRight: =0
+            PaddingTop: =0
+            Size: =24
+            Text: =ThisItem.RoomName
+            VerticalAlign: =VerticalAlign.Top
+            Width: =707
+            X: =364
+            Y: =56
+            ZIndex: =2
+
+        NextArrow1 As icon.ChevronRight:
+            AccessibleLabel: =Self.Tooltip
+            Height: =60
+            Icon: =Icon.ChevronRight
+            OnSelect: =Select(Parent); Navigate(Schedule_Form)
+            PaddingBottom: =10
+            PaddingLeft: =10
+            PaddingRight: =10
+            PaddingTop: =10
+            TabIndex: =0
+            Tooltip: ="항목 세부 정보 보기"
+            Width: =60
+            X: =Parent.TemplateWidth - Self.Width - 5
+            Y: =(Parent.TemplateHeight / 2) - (Self.Height / 2)
+            ZIndex: =4
+
+        Separator5 As rectangle:
+            Height: =1
+            OnSelect: =Select(Parent)
+            Width: =Parent.TemplateWidth
+            Y: =Parent.TemplateHeight - 1
+            ZIndex: =5
+
+        Label10 As label:
+            OnSelect: =Select(NextArrow1)
+            Size: =18
+            Text: =ThisItem.Building
+            X: =660
+            Y: =60
+            ZIndex: =6
+
+        Label8 As label:
+            OnSelect: =Select(Parent)
+            Text: =ThisItem.Full
+            Visible: =false
+            X: =810
+            Y: =64
+            ZIndex: =7
+
