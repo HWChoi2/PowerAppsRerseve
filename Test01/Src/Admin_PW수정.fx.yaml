@@ -115,7 +115,7 @@
     Button5_1 As button:
         Height: =54
         OnSelect: |-
-            =If(TextInput1_1.Text = "dex1357()",Navigate(Admin_Room),UpdateContext({popup1:true})); Reset(TextInput1_1);
+            =If(TextInput1_1.Text = "dex1234%",Navigate(Admin_Room),UpdateContext({popup1:true})); Reset(TextInput1_1);
         RadiusBottomLeft: =0
         RadiusBottomRight: =0
         RadiusTopLeft: =0
